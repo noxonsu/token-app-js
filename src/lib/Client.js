@@ -60,9 +60,10 @@ class Client {
         let wrapped = JSON.parse(message);
         if (wrapped.recipient == this.config.address) {
           let session = new Session(this.bot, this.pgPool, this.config, wrapped.sender, () => {
+            console.log(wrapped);
             let sofa = SOFA.parse(wrapped.sofa);
             Logger.receivedMessage(sofa);
-
+            
             if (sofa.type == "Init") {
               for(let k in sofa.content) {
                 session.set(k, sofa.content[k]);
