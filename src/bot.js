@@ -69,7 +69,7 @@ function onCommand(session, command) {
         });
   }
   if (command.content.value.match(/liga=/)) {
-<<<<<<< HEAD
+
       var url = 'http://noxonfund.com/tokenbrowser/p.php?l='+command.content.value.replace('liga=','');
       console.log(url);
       rp(url)
@@ -88,12 +88,7 @@ function onCommand(session, command) {
             showKeyboard: true,
           }));  
         });
-=======
-    session.reply(SOFA.Message({
-            body: "liga",
-            showKeyboard: false,
-          }));    
->>>>>>> parent of 2ea065e... Update bot.js
+
   }
   switch (command.content.value) {
     case 'ping':
