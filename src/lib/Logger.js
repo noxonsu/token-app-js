@@ -16,7 +16,7 @@ class Logger {
   }
 
   static receivedMessage(sofa) {
-     console.log(sofa);
+     if (sofa == null) return true;
     Logger.log(Logger.colorPrefix('\u21D2  ', wrap(sofa.string, {width: 60, cut: true}), chalk.yellow, chalk.grey));
     Logger.log(Logger.color('\u21D2  ', sofa.display, chalk.yellow));
     Logger.log('\n');
